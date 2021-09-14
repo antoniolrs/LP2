@@ -43,27 +43,13 @@ class PackFrame extends JFrame {
 		                            figs.add(new Rect(x,y, w,h, 0,0,0));
 		                        }else if (evt.getKeyChar() == 'e'){
 					figs.add(new Ellipse(x,y, w,h, 0,0,0)); 
-				    }
-					repaint();
+				    }   repaint();
+					
 		                }
 		            }
         );
 
-		this.addKeyListener (
-		            new KeyAdapter() {
-		                public void keyPressed (KeyEvent evt) {
-		                    if (evt.getKeyChar() == 'e') {
-		                        int x = rand.nextInt(350);
-		                        int y = rand.nextInt(350);
-		                        int w = rand.nextInt(50);
-		                        int h = rand.nextInt(50);
-		                        
-		                        repaint();  // outer.repaint()
-		                    }
-		                }
-		            }
-        );
-
+		
 
 
     }
