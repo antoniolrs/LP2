@@ -34,14 +34,17 @@ class PackFrame extends JFrame {
 		this.addKeyListener (
 		            new KeyAdapter() {
 		                public void keyPressed (KeyEvent evt) {
-		                    if (evt.getKeyChar() == 'r') {
 		                        int x = rand.nextInt(350);
 		                        int y = rand.nextInt(350);
 		                        int w = rand.nextInt(50);
 		                        int h = rand.nextInt(50);
-		                        figs.add(new Rect(x,y, w,h, 0,0,0));
-		                        repaint();  // outer.repaint()
-		                    }
+
+					if (evt.getKeyChar() == 'r') {
+		                            figs.add(new Rect(x,y, w,h, 0,0,0));
+		                        }else if (evt.getKeyChar() == 'e'){
+					figs.add(new Ellipse(x,y, w,h, 0,0,0)); 
+				    }
+					repaint();
 		                }
 		            }
         );
@@ -54,7 +57,7 @@ class PackFrame extends JFrame {
 		                        int y = rand.nextInt(350);
 		                        int w = rand.nextInt(50);
 		                        int h = rand.nextInt(50);
-		                        figs.add(new Ellipse(x,y, w,h, 0,0,0));
+		                        
 		                        repaint();  // outer.repaint()
 		                    }
 		                }
